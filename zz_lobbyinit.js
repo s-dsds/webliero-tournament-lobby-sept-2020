@@ -17,7 +17,9 @@
 		teamsLocked: true,
 	});
 	window.WLROOM = room;
-	initFirebase();
+
+	room.onRoomLink = (link) => console.log(link);
+	room.onCaptcha = () => console.log("Invalid token");
 })();
 
 const admins = new Set(CONFIG.admins);
@@ -25,10 +27,13 @@ const admins = new Set(CONFIG.admins);
 let subscribedPlayers = new Map();
 let auth = new Map();
 var fdb;
+
 var commentsRef;
 var notifsRef;
 
 var registrationIsClosed = false;
+
+initFirebase();
 
 window.WLROOM.onPlayerJoin = (player) => {
 	if ( admins.has(player.auth) ) {
