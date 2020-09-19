@@ -4,7 +4,7 @@
 		token: window.WLTOKEN,
 		roomName: "Tournament Lobby",
 		maxPlayers: 60,	
-		public: false
+		public: true
 	});
 
 	room.setSettings({
