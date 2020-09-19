@@ -60,10 +60,15 @@ function addUsersToSubscribed(childSnapshot) {
 	if (subscribedPlayers.has(k)) {
 		var ex = subscribedPlayers.get(childSnapshot.key);
 		ex.name = v.name;
-		ex.position = v.position;
+        ex.position = v.position;
+        ex.shortname = v.shortname!=undefined?v.shortname:"";
 		subscribedPlayers.set(childSnapshot.key, ex);
 	} else {
-		subscribedPlayers.set(childSnapshot.key, {"name": v.name, "position": v.position }); 
+        subscribedPlayers.set(childSnapshot.key, {
+             "name": v.name,
+             "position": v.position,
+             "shortname": v.shortname!=undefined?v.shortname:"" 
+            }); 
 	}
 }
 

@@ -1,4 +1,5 @@
 function genNewMap() {
+    currentMapFunc = genNewMap;
     (async () => {
         await load_fonts([
             'https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap',
@@ -94,4 +95,12 @@ function createCanvas(w,h){
     c.ctx    = c.getContext("2d");
 
     return c;
+}
+
+var currentMapFunc = null;
+
+function getCurrentMapIfOk() {
+    if (currentMapFunc!=null) {
+        currentMapFunc();
+    }
 }

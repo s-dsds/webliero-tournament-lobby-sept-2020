@@ -1,4 +1,5 @@
 function waitingtimetoMap() {
+	currentMapFunc = waitingtimetoMap;
 	(async () => {
         await load_fonts([
             'https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap',
@@ -32,7 +33,10 @@ function waitingtimetoMap() {
 			ctx.fillStyle = "#88480c";
 
 			// ctx.lineWidth=1;			
-				ctx.fillText(pl.name.substring(0,16), widthS, heightS); 
+				ctx.fillText(
+					pl.shortname!=""?pl.shortname:pl.name.substring(0,16),
+					widthS,
+				    heightS); 
 				heightS = heightS + 15;
 				if (heightS>max) {
 					heightS = reset;
