@@ -63,7 +63,7 @@ function waitingtimetoMap() {
 		}
 		//ctx.putImageData(imgData, 20, 0); 
 		console.log("done", rawData, failures);
-		room.loadRawLevel("batman_custom.lev",new Uint8Array(rawData).buffer, cw, ch);
+		window.WLROOM.loadRawLevel("batman_custom.lev",new Uint8Array(rawData).buffer, cw, ch);
 	  }
 		let failures = 0;
 	  function getbestpixelValue(red,green,blue) {
