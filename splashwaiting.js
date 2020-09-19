@@ -105,6 +105,7 @@ var timerID;
 
 function startSplashWaiting()
 {
+	waitingtimetoMap();
 	timerID = setInterval(function() {
 		waitingtimetoMap();
 	}, 30 * 1000); 	
